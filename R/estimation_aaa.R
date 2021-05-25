@@ -4,13 +4,13 @@ aaa_constraint_violations <- function(x, etsenv)
     parmatrix <- etsenv$parmatrix
     parmatrix[names(x),"init"] <- x
     v <- FALSE
-    if (parmatrix["beta",1] == "estimate") {
+    if (parmatrix["beta","estimate"] == 1) {
         if (parmatrix["beta","init"] > parmatrix["alpha","init"]) {
             v <- TRUE
             return(v)
         }        
     }
-    if (parmatrix["gamma",1] == "estimate") {
+    if (parmatrix["gamma","estimate"] == 1) {
         if (parmatrix["gamma","init"] > (1 - parmatrix["alpha","init"])) {
             v <- TRUE
             return(v)
