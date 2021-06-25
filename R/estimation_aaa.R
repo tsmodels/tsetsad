@@ -142,7 +142,7 @@ prepare_inputs_aaa_ad <- function(spec, solver = "nloptr")
         {
             llh <- etsenv$llh
             if (aaa_constraint_violations(x, etsenv)) {
-                llh <- llh * 1.1
+                llh <- llh + 0.2 * abs(llh)
             } else {
                 names(x) <- etsenv$parameter_names
                 llh <- fun$fn(x)
