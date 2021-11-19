@@ -2,6 +2,7 @@
 
 S3method(estimate_ad,tsets.spec)
 export(estimate_ad.tsets.spec)
+import(methods)
 import(tsmethods)
 importFrom(TMB,MakeADFun)
 importFrom(nloptr,nloptr)

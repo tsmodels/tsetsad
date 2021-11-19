@@ -34,7 +34,7 @@ prepare_inputs_mmm_ad <- function(spec, solver = "nloptr")
         fixed$phi <- factor(NA)
     }
     if (pmatrix["l0","estimate"] == 0) {
-        fixed$level_init <- factor(NA)
+        fixed$l0 <- factor(NA)
     }
     if (pmatrix["b0","estimate"] == 0) {
         fixed$b0 <- factor(NA)

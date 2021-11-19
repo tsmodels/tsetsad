@@ -48,12 +48,12 @@ Type mmm(objective_function<Type>* obj) {
     onestmp.setOnes();
     Type fsum = 0.0;
     Type seasonal_update = 0.0;
-    vector<Type> xreg = x * b;
+    vector<Type> xreg = (x * b).array() + Type(1.0);
     vector<Type> tmp(seasonal_frequency);
     vector<Type> stmp(seasonal_frequency);
     for(int i = 1;i<timesteps;i++){
         mu(i) = level(i-1) * pow(slope(i-1), phi);
-        fit(i) =  (mu(i) * seasonal(i-1, seasonal_frequency-1)) + xreg(i);
+        fit(i) =  (mu(i) * seasonal(i-1, seasonal_frequency-1)) * (xreg(i));
         if (good(i) > 0.5) {
             error(i) = (y(i) - fit(i))/fit(i);
         } else {

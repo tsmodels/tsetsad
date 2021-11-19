@@ -5,6 +5,7 @@
 #' @importFrom stats optim
 #' @importFrom stats nlminb
 #' @import tsmethods
+#' @import methods
 "_PACKAGE"
 
 # The following block is used by usethis to automatically manage
