@@ -1,0 +1,27 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+version <- as.vector(read.dcf('DESCRIPTION')[, 'Version'])
+version <- gsub('-', '.', version)
+```
+
+[![R-CMD-check](https://github.com/tsmodels/tsetsad/workflows/R-CMD-check/badge.svg)](https://github.com/tsmodels/tsetsad/actions)
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-`r version`-orange.svg?style=flat-square)](commits/master)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/tsetsad)](https://cran.r-project.org/package=tsetsad)
+
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# tsetsad
+ETS model estimation using autodiff (based on the TMB package). This is not 
+expected to be called directly but instead from the tsets package (using the 
+option for estimating a model using autodiff).
