@@ -1,6 +1,6 @@
 Package: tsetsad
 Title: ETS model estimation using automatic differentiation
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: 
     person(given = "Alexios",
            family = "Galanos",
@@ -15,3 +15,4 @@ RoxygenNote: 7.2.0
 Depends: methods, tsmethods
 Imports: TMB (>= 1.7.20), nloptr
 LinkingTo: TMB
+Remotes: tsmodels/tsmethods
